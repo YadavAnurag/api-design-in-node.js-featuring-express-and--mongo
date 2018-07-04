@@ -1,0 +1,48 @@
+#Node.js
+1. Is just javascript that give the ability to run js outside the browser.
+2. This is why some borwser api does not work in node.js (like documnet and window)
+
+
+#Package.json
+Is use to store metadata for your projects
+
+#CommonJs
+1. Node uses CommonJs for its module loader.
+2. Using require() we can get access to built-in and 3rd party modules.
+3. CommonJs is just like <script></script> which is use to load others js files in DOM.
+
+
+#Middleware(Is just a function)
+0. Middleware does their job btw req and res.
+1. Express uses Middleware to modify and inspect the incoming req.
+2. Middleware done things like, parsing urls and handle auth.
+3. Express can also serves static assessts and does so with ease compared to the manual setup in http.
+4. Middleware is a function with access to the request object, the response object and the next() function that when called go to the next Middleware.
+5. Middleware can run any code, change the req and res object, and the req-res cycle and call next Middleware in the stack.
+6. If a Middleware does not call next() or end the cycle the serve will hang.
+7. Types of Middleware
+  1. 3rd party
+  2. Router level
+  3. Application level
+  4. Error handling
+  5. built-in
+
+#RESTful
+1. Modern web is mostly built around REST.
+2. The basic is that it should be stateless(means every req does not know about the previous req).
+3. Uses http verbs explicity.
+4. Exposes a directory like url pattern for routes.
+
+
+#express.static(A buitl-in Middleware)
+1. express.static will serve everything
+2. With in client as a static resource
+3. Also it will serve index.html file on the root of the directory on get '/' req.
+4. app.use(express.static('folder-name'));
+
+#bodyParser
+1. bodyParser make it possible to post data to server
+2. We can access data we post on to server as req.body
+3. app.use(bodyParser.urlencoded({extended: true}));
+4. app.use(bodyParser.json());
+5. By default express doesn't know how to handle json.
