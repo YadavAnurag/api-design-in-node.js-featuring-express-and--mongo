@@ -11,11 +11,11 @@ router.get('/me', checkUser, controller.me);
 
 router.route('/')
   .get(controller.get)
-  .post(controller.post)
+  .post(controller.post);
 
 router.route('/:id')
   .get(controller.getOne)
   .put(checkUser, controller.put)
-  .delete(checkUser, controller.delete)
+  .delete(checkUser, controller.delete);
 
 module.exports = router;
